@@ -3,7 +3,6 @@ import pandas as pd
 import requests as re
 
 api_key = "RGAPI-a54832df-ff96-4069-87ca-e3a2089c0333"
-account_details
 
 def get_user_data(user):
     name, tag = user.strip().split("#")
