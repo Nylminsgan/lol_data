@@ -3,6 +3,7 @@ import pandas as pd
 
 
 def get_user_data(user):
+    st.text(user)
     print("get_user_data")
     pass
 
