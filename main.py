@@ -33,6 +33,8 @@ if st.button("Analyze"):
     st.json(user)
     games = get_matches(user)
     st.json(games)
+    game = get_match_data(games[0])
+    st.json(game)
 
 
 
