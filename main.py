@@ -9,7 +9,7 @@ def get_user_data(user):
     account_api = 'https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/' + name + '/' + tag + '?api_key=' + api_key
     account_details = re.get(account_api).json()
     st.text("Eingegebener name: " + name + "#" + tag)
-    st.text("Details: " + account_details)
+    st.text(account_details)
     pass
 
 
