@@ -11,7 +11,7 @@ def get_user_data(user):
     if acc.ok:
         puuid = acc.json()["puuid"]
         #st.text("Eingegebener name: " + acc["name"] + "#" + puuid)
-        st.text(acc)
+        st.text(acc.json())
         games_api = 'https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/' + puuid + '/ids?' + 'queue=420' + '&start=0&count=20' + '&api_key=' + api_key
         games = re.get(games_api).json()
         st.text(games)
