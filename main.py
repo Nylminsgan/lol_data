@@ -7,7 +7,7 @@ API = "RGAPI-a54832df-ff96-4069-87ca-e3a2089c0333"
 
 def get_user_data(user):
     name, tag = user.strip().split("#")
-    st.text(name + "#" + tag)
+    st.text("Eingegebener name: " + name + "#" + tag)
     pass
 
 
