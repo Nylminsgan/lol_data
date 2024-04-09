@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import requests as re
 
-API = "RGAPI-a54832df-ff96-4069-87ca-e3a2089c0333"
+api_key = "RGAPI-a54832df-ff96-4069-87ca-e3a2089c0333"
 
 
 def get_user_data(user):
