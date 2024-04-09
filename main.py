@@ -14,7 +14,7 @@ def get_user(user):
         return "Name nicht gefunden"
 
 def get_matches(acc, amount=20):
-    games_api = 'https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/' + acc["puuid"] + '/ids?' + 'queue=420' + '&start=0&count='+ amount + '&api_key=' + api_key
+    games_api = 'https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/' + acc["puuid"] + '/ids?' + 'queue=420' + '&start=0&count='+ str(amount) + '&api_key=' + api_key
     games = re.get(games_api)
     if games.ok:
         return games.json()
