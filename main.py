@@ -7,15 +7,15 @@ api_key = "RGAPI-a54832df-ff96-4069-87ca-e3a2089c0333"
 def get_user(user):
     name, tag = user.strip().split("#")
     account_api = 'https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/' + name + '/' + tag + '?api_key=' + api_key
-    acc = re.get(account_api)
-    if acc.ok:
-        return acc.json()
+    user = re.get(account_api)
+    if user.ok:
+        return user.json()
     else:
         return "Name nicht gefunden"
 
 def get_matches(acc, amount=20):
     games_api = 'https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/' + acc["puuid"] + '/ids?' + 'queue=420' + '&start=0&count='+ amount + '&api_key=' + api_key
-    games = re.get(games.api)
+    games = re.get(games_api)
     if games.ok:
         return games.json()
     else:
