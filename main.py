@@ -4,6 +4,9 @@ import requests as re
 
 api_key = "RGAPI-a54832df-ff96-4069-87ca-e3a2089c0333"
 
+def get_user_by_puuid(puuid):
+    return re.get("https://europe.api.riotgames.com" + "/riot/account/v1/accounts/by-puuid/" + puuid + '?api_key=' + api_key).json()
+
 def get_user(user):
     name, tag = user.strip().split("#")
     account_api = 'https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/' + name + '/' + tag + '?api_key=' + api_key
@@ -34,7 +37,8 @@ if st.button("Analyze"):
     games = get_matches(user)
     st.json(games)
     game = get_match_data(games[0])
-    st.json(game)
+    for participant in game["metadata"]["participants"]:
+        st.text(get_user_by_puuid(participant)["gameName"])
 
 
 
