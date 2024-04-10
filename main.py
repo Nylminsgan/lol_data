@@ -47,3 +47,9 @@ if st.button("Analyze"):
         user = get_user_by_puuid(participant)
         player.append((participant, user["gameName"] + "#" + user["tagLine"]))
     st.text(player)
+    for user in player:
+        element = "Ghn7_tTwi81K1sgHwzJP21U9zvEDf39DznCa5toCzihVOO_AkcAiv8Adbp5jdweUaqXn5d-76PzNTA"
+        if element in user:
+            st.text("Ist drin")
+        else:
+            st.text("Ist nicht drin")
