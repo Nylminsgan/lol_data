@@ -34,7 +34,8 @@ def get_match_data(match_id):
     return re.get(match_data_req).json()
 
 
-st.text("Hello World!")
+st.title("Hello World!")
+st.title("Analyze the player")
 username = st.text_input("Username#Tag")
 if st.button("Analyze"):
     user = get_user(username)
@@ -43,5 +44,6 @@ if st.button("Analyze"):
     st.json(games)
     game = get_match_data(games[0])
     for participant in game["metadata"]["participants"]:
-        player.append((participant, get_user_by_puuid(participant)["gameName"]))
+        user = get_user_by_puuid(participant)
+        player.append((participant, user["gameName"] + "#" + user["tagLine"]))
     st.text(player)
