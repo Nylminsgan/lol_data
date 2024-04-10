@@ -43,5 +43,5 @@ if st.button("Analyze"):
     st.json(games)
     game = get_match_data(games[0])
     for participant in game["metadata"]["participants"]:
-        player.append((participant, get_user_by_puuid(participant)))
+        player.append((participant, get_user_by_puuid(participant)["gameName"]))
     st.text(player)
